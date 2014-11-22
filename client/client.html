@@ -1,0 +1,101 @@
+<head>
+  <title>salaisuus</title>
+</head>
+
+<body>
+	<div class="kelloyksi">
+	{{> header}}
+ 	</div>
+  <!-- 
+   -->
+   <div class="sisalto">
+	   <div class="ylaosa">
+	   
+	   <table>
+	   <tr>
+	   		<td><h1>Axelbook</h1>{{> welcome}}</td>
+	   		<td></td>
+	   </tr>
+	   	<tr>
+		   	<td>{{#if currentUser}}<p>{{> input }}</p>{{else}} Login to post to Axelbook {{/if}}</td>
+		   	<td>{{>quote}} </td>
+	   	</tr>
+	   </table>
+	   </div>
+<div class="alaosa">
+  <div id="chatti">
+  	<p>{{> messages}}</p> 
+  </div>
+
+  <img id="sivukuva" src="axelsivu.jpeg"/>
+  </div>
+  </div>
+</body>
+
+<template name="header">
+	<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+	<h6 style="float:left; padding-left:2em"> <i>Axel, now in your life. Anytime, anywhere.</i> </h6>
+        <div class="container">
+          <div class="nav pull-right">
+          {{> loginButtons}}
+          <!-- {{> user_info}} -->
+          </div>
+        </div>
+      </div>
+</div>
+</template>
+
+<template name="welcome">
+  <p>
+    Part of the Axel environment.
+  </p>
+</template>
+<template name="input">
+	<input type="text" style="vertical-align:middle" id="message">
+</template>
+
+<template name="quote">
+	<p style="vertical-align:center; padding-left: 3em"><i>{{quotet}}</i></p>
+</template>
+
+<template name="messages">
+	{{#each messages}}
+	<strong>{{name}}: </strong>{{message}}<br>
+	{{/each}}
+</template>
+
+<!-- 
+<template name="user_info">
+	<ul class="nav pull-right">
+	{{#if currentUser}}
+		{{> user_loggedin}}
+	{{else}}
+		{{> user_loggedout}}
+	{{/if}}
+	</ul>
+</template>
+
+<template name="user_loggedin">
+	{{#if loggingIn}}
+	<li><a>Logging in...</a></li>
+	{{else}}
+	<li><img class="img-rounded" style="height:32px; margin-top:4px;" src="{{currentUser.profile.avatar_url}}"/></li>
+	<li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		{{currentUser.profile.name}}
+		<b class="caret"></b>
+		</a>
+		<ul class="dropdown-menu">
+		<li><a>Account settings</a></li>
+		<li class="divider"></li>
+		<li><a id="logout">Logout</a></li>
+		</ul>
+	</li>
+	{{/if}}
+</template> -->
+
+
+<!-- <template name="user_loggedout">
+	<li><a id="login">Login with Facebook</a></li>
+</template> -->
