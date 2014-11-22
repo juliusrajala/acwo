@@ -7,6 +7,8 @@ $(document).ready(function(){
     $("#chatti").height($("#sivukuva").height());
     console.log("testi1")
   });
+  $('.modal-trigger').leanModal();
+  $('#message').tooltip({"delay":50});
 });
 
 
@@ -45,12 +47,24 @@ Template.input.events = {
     if(event.which==13){
       var name = Meteor.user().services.facebook.first_name + " " + Meteor.user().services.facebook.last_name;
       var message = document.getElementById('message');
+      var tags = [];
+      var tagHandler = message.value;
+      console.log(tagHandler);
+      var tagList = tagHandler.split(" ");
 
+      //Handlaa tagit ja puskee hashtagilla alkavat stringit tagilistaksi
       if(message.value != '' && message.value != ' '){
+        for(var i = 0; i<tagList.length; i++){
+          if(tagList[i].charAt(0) === '#'){
+            tags.push(tagList[i]);
+          }
+        }
+
         Messages.insert({
           name: name,
           message: message.value,
-          time: Date.now()
+          time: Date.now(),
+          tags: tags
         });
         
         document.getElementById('message').value = '';

@@ -1,41 +1,39 @@
 <head>
-  <title>salaisuus</title>
+  <title>Axelbook - Welcome to the human-origo</title>
 </head>
 
 <body>
 	<div class="kelloyksi">
 	{{> header}}
  	</div>
-  <!-- 
-   -->
+
    <div class="sisalto">
-	   <div class="ylaosa">
-	   
+	   <div class="ylaosa z-depth-2" >
+	   <p style="text-align:center; color:white;"><h1 style="color:white">Axelbook</h1>{{> welcome}}</p>
 	   <table>
-	   <tr>
-	   		<td><h1>Axelbook</h1>{{> welcome}}</td>
-	   		<td></td>
-	   </tr>
 	   	<tr>
-		   	<td>{{#if currentUser}}<p>{{> input }}</p>{{else}} Login to post to Axelbook {{/if}}</td>
+		   	<td style="width:68.5%;">{{#if currentUser}}<p>{{> input }}</p>{{else}} Login to post to Axelbook {{/if}}</td>
 		   	<td>{{>quote}} </td>
 	   	</tr>
 	   </table>
 	   </div>
-<div class="alaosa">
-  <div id="chatti">
-  	<p>{{> messages}}</p> 
+
+<div class="alaosa z-depth-3">
+  <div id="chatti" class="z-depth-4">
+  	<p class="z-depth-5">{{> messages}}</p> 
+  </div>
+  <img id="sivukuva" src="axelsivu.jpeg" class="z-depth-4"/>
+  </div>
   </div>
 
-  <img id="sivukuva" src="axelsivu.jpeg"/>
-  </div>
-  </div>
 </body>
 
 <template name="header">
-	<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar navbar-inverse navbar-fixed-top  z-depth-3" style="opacity:0.7; position: fixed;">
       <div class="navbar-inner">
-	<h6 style="float:left; padding-left:2em"> <i>Axel, now in your life. Anytime, anywhere.</i> </h6>
+      <img src="axelbooklogo.png" style="width:5%; float:left"/>
+		<p style="float:left; padding-left:5%; color:white; ">Get your daily dose of Axel-related discussion.</p>
+
         <div class="container">
           <div class="nav pull-right">
           {{> loginButtons}}
@@ -44,25 +42,26 @@
         </div>
       </div>
 </div>
+
 </template>
 
 <template name="welcome">
   <p>
-    Part of the Axel environment.
+    Part of the greater Axel ecosystem. 
   </p>
 </template>
 <template name="input">
-	<input type="text" style="vertical-align:middle" id="message">
+	<input type="text" style="text-align:middle" id="message" class="z-depth-5" data-position="bottom" data-tooltip="I am tooltip">
 </template>
 
 <template name="quote">
-	<p style="vertical-align:center; padding-left: 3em"><i>{{quotet}}</i></p>
+	<p style="text-align:center; padding-left: 3em;"><i>{{quotet}}</i></p>
 </template>
 
 <template name="messages">
-	{{#each messages}}
+	<p>{{#each messages}}
 	<strong>{{name}}: </strong>{{message}}<br>
-	{{/each}}
+	{{/each}}</p>
 </template>
 
 <!-- 
