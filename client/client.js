@@ -1,14 +1,30 @@
 /*
 *Messages
 */
+
+//Meteor.startup(function(){
+//  $("#chatti").outerHeight($("#sivukuva").height());
+//  console.log("meteori startuppi");
+//});
+
 $(document).ready(function(){
-  $("#chatti").height($("#sivukuva").height());
-  $(window).resize(function(){
-    $("#chatti").height($("#sivukuva").height());
-    console.log("testi1")
+  $("#chatti").outerHeight($("#sivukuva").height());
+  console.log("document ready");
+  //$('.modal-trigger').leanModal();
+  //$('#message').tooltip({"delay":50});
+  $('.carousel').carousel({ interval: 10000, pause: false});
+});
+$(window).resize(function(){
+    $("#chatti").outerHeight($("#sivukuva").height());
+    //console.log("testi1")
   });
-  $('.modal-trigger').leanModal();
-  $('#message').tooltip({"delay":50});
+$(window).load(function(){
+  $("#chatti").outerHeight($("#sivukuva").height());
+    console.log("window load");
+});
+$('#this-carousel-id').on('slide.bs.carousel', function(){
+  $("#chatti").outerHeight($("#sivukuva").height());
+  console.log("carousel slide");
 });
 
 

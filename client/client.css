@@ -5,9 +5,6 @@
 	margin-top: auto;
 	margin-bottom: auto;
 }
-#main {
-    padding-top:20px;
-}
 
 .sisalto{
 	display:inline-block;
@@ -35,6 +32,7 @@
 	float: left;
 	color: black;
 	overflow: auto;
+	min-height: 200px;
 }
 #ylaosa{
 	height:20%;
@@ -43,7 +41,21 @@
 }
 #sivukuva{
 	width: 30%; 
+	float: right;
 }
+
+.carousel {
+	margin-bottom: 0px;
+}
+
+.carousel-inner > .item {
+	transition: 3s;
+}
+
+.carousel-inner > .item > img {
+	margin: 0 auto;
+}
+
 body{
 	height: 100%;
 	background-color:#2980b9;
