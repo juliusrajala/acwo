@@ -22,10 +22,6 @@ $(window).load(function(){
   $("#chatti").outerHeight($("#sivukuva").height());
     console.log("window load");
 });
-$('#this-carousel-id').on('slide.bs.carousel', function(){
-  $("#chatti").outerHeight($("#sivukuva").height());
-  console.log("carousel slide");
-});
 
 
 var quotet = ['Toinen tiistai, seuranani hitler.'
